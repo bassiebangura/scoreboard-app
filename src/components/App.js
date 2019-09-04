@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import Player from "./Player";
-import Stats from "./Stats"
+
 import "./App.css";
 
 class App extends React.Component {
@@ -9,12 +9,12 @@ class App extends React.Component {
     players: [
       {
         name: "Bassie",
-        score: 10,
+        score: 0,
         id: 1
       },
-      { name: "Joseph", score: 15, id: 2 },
-      { name: "Junior", score: 20, id: 3 },
-      { name: "Bangura", score: 25, id: 4}
+      { name: "Joseph", score: 0, id: 2 },
+      { name: "Junior", score: 0, id: 3 },
+      { name: "Bangura", score: 0, id: 4}
     ]
   };
 
