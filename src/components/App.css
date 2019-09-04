@@ -119,6 +119,18 @@ svg {
   border-bottom-color: #d4caff;
 }
 
+.remove-player {
+  font-size: 1.15em;
+  border: none;
+  outline: none;
+  visibility: hidden; 
+  color: #ef5350;
+  cursor: pointer;
+  margin: 0 10px 0 0;
+  padding: 0;
+  background: none;
+}
+
 .player-name:hover .remove-player {
   visibility: visible;
 }
@@ -134,17 +146,7 @@ svg {
   padding-left: 10px;
 }
 
-.remove-player {
-  font-size: 1.15em;
-  border: none;
-  outline: none;
-  visibility: hidden;
-  color: #ef5350;
-  cursor: pointer;
-  margin: 0 10px 0 0;
-  padding: 0;
-  background: none;
-}
+
 
 .stats,
 .stopwatch {

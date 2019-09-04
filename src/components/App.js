@@ -1,46 +1,43 @@
 import React from "react";
+import Header from "./Header";
+import Player from "./Player";
 import "./App.css";
 
-const Header = () => {
-  return (
-    <header>
-      <h1>Scoreboard</h1>
-      <span className="stats">Players: 1</span>
-    </header>
-  );
-};
+class App extends React.Component {
+  state = {
+    players: [
+      {
+        name: "Bassie",
+        id: 1
+      },
+      { name: "Joseph", id: 2 },
+      { name: "Junior", id: 3 }
+    ]
+  };
 
-const Player = props => {
-  return (
-    <div className="player">
-      <span className="player-name">{props.player}</span>
-      <Counter score={props.score} />
-    </div>
-  );
-};
+  handleRemovePlayer = id => {
+    this.setState(prevState => {
+      return {
+        players: prevState.players.filter(player => player.id !== id)
+      };
+    });
+  };
+  render() {
+    return (
+      <div className="scoreboard">
+        <Header title="Scoreboard" totalPlayers={this.state.players.length} />
 
-class Counter extends React.Component {
-
-  render () {
-     return (
-      <div className="counter">
-        <button className="counter-action decrement"> - </button>
-        <span className="counter-score">{props.score}</span>
-        <button className="counter-action increment"> + </button>
+        {this.state.players.map(player => (
+          <Player
+            id={player.id}
+            name={player.name}
+            key={player.id.toString()}
+            removePlayer={this.handleRemovePlayer}
+          />
+        ))}
       </div>
     );
-  } 
-} 
- 
-
-
-function App() {
-  return (
-    <div className="scoreboard">
-      <Header />
-      <Player player="Bassie Bangura" score={30} />
-    </div>
-  );
+  }
 }
 
 export default App;
