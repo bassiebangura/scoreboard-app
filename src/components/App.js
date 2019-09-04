@@ -9,12 +9,12 @@ class App extends React.Component {
     players: [
       {
         name: "Bassie",
-        score: 0,
+        score: 5,
         id: 1
       },
-      { name: "Joseph", score: 0, id: 2 },
-      { name: "Junior", score: 0, id: 3 },
-      { name: "Bangura", score: 0, id: 4}
+      { name: "Joseph", score: 5, id: 2 },
+      { name: "Junior", score: 5, id: 3 },
+      { name: "Bangura", score: 5, id: 4}
     ]
   };
 
@@ -48,7 +48,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="scoreboard">
-        <Header title="Scoreboard" totalPlayers={this.state.players.length} />
+        <Header title="Scoreboard" players={this.state.players} />
 
         {this.state.players.map((player, index) => (
           <Player
